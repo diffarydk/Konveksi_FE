@@ -1,0 +1,34 @@
+# ===================================
+# Environment Variables Template
+# ===================================
+# Copy this content to create your environment files:
+# 
+# For Development: Copy to .env
+# For Production: Copy to .env.production
+#
+
+# =================
+# DEVELOPMENT (.env)
+# =================
+VITE_API_BASE_URL=http://localhost:8000/api/v1
+VITE_WS_BASE_URL=ws://localhost:8000
+VITE_APP_NAME=Konveksi Admin Panel
+VITE_APP_VERSION=1.0.0
+
+# =====================
+# PRODUCTION (.env.production)
+# =====================
+# Uncomment and modify these for production:
+# VITE_API_BASE_URL=https://your-backend.com/api/v1
+# VITE_WS_BASE_URL=wss://your-backend.com
+# VITE_APP_NAME=Konveksi Admin Panel
+# VITE_APP_VERSION=1.0.0
+
+# ===================================
+# Instructions:
+# ===================================
+# 1. Copy the DEVELOPMENT section to .env file
+# 2. Copy the PRODUCTION section to .env.production file  
+# 3. Replace 'your-backend.com' with your actual production domain
+# 4. Use 'wss://' for secure WebSocket in production
+# 5. Use 'https://' for secure API in production 

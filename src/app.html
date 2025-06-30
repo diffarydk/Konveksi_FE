@@ -1,0 +1,206 @@
+<!-- src/app.html -->
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Hay Hill Clothing - Konveksi premium sejak 1990"
+    />
+    <meta name="keywords" content="konveksi, pakaian, seragam, custom" />
+    <title>Hay Hill Clothing</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="/images/logo.jpg" />
+    <link rel="apple-touch-icon" href="/images/logo.jpg" />
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Hay Hill Clothing - Konveksi Premium" />
+    <meta
+      property="og:description"
+      content="Hay Hill Clothing - Konveksi premium sejak 1990, menyediakan berbagai kebutuhan pakaian dan seragam berkualitas tinggi."
+    />
+    <meta property="og:image" content="/images/logo.jpg" />
+    <meta property="og:url" content="https://hayhillclothing.id" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Hay Hill Clothing - Konveksi Premium" />
+    <meta
+      name="twitter:description"
+      content="Hay Hill Clothing - Konveksi premium sejak 1990, menyediakan berbagai kebutuhan pakaian dan seragam berkualitas tinggi."
+    />
+    <meta name="twitter:image" content="/images/logo.jpg" />
+
+    <!-- External CSS with enhanced fallback -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+      onload="console.log('Font Awesome loaded from cdnjs')"
+      onerror="this.remove(); console.log('cdnjs failed, trying jsdelivr'); loadFontAwesome();"
+    />
+
+    <script>
+      // Font Awesome fallback loader
+      function loadFontAwesome() {
+        // Try jsdelivr CDN
+        const link1 = document.createElement("link");
+        link1.rel = "stylesheet";
+        link1.href =
+          "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css";
+        link1.crossOrigin = "anonymous";
+        link1.onload = () => console.log("Font Awesome loaded from jsdelivr");
+        link1.onerror = () => {
+          console.log("jsdelivr failed, trying unpkg");
+          // Try unpkg CDN
+          const link2 = document.createElement("link");
+          link2.rel = "stylesheet";
+          link2.href =
+            "https://unpkg.com/@fortawesome/fontawesome-free@6.7.2/css/all.css";
+          link2.crossOrigin = "anonymous";
+          link2.onload = () => console.log("Font Awesome loaded from unpkg");
+          link2.onerror = () => {
+            console.log("All CDNs failed, using fallback icons");
+            // Add fallback CSS for basic icons
+            const style = document.createElement("style");
+            style.innerHTML = `
+              .fa, .fas, .fab, .far, .fal, .fat, .fad {
+                display: inline-block;
+                font-style: normal;
+                font-variant: normal;
+                text-rendering: auto;
+                -webkit-font-smoothing: antialiased;
+              }
+              .fa-spin { animation: fa-spin 2s infinite linear; }
+              @keyframes fa-spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+              .fa-plus::before { content: '+'; }
+              .fa-edit::before { content: '✏️'; }
+              .fa-trash::before { content: '🗑️'; }
+              .fa-eye::before { content: '👁️'; }
+              .fa-cog::before { content: '⚙️'; }
+              .fa-check::before { content: '✓'; }
+              .fa-times::before { content: '✕'; }
+              .fa-arrow-left::before { content: '←'; }
+              .fa-download::before { content: '⬇️'; }
+              .fa-puzzle-piece::before { content: '🧩'; }
+              .fa-database::before { content: '🗄️'; }
+              .fa-check-circle::before { content: '✅'; }
+            `;
+            document.head.appendChild(style);
+          };
+          document.head.appendChild(link2);
+        };
+        document.head.appendChild(link1);
+      }
+
+      // Timeout fallback
+      setTimeout(() => {
+        if (!document.querySelector('link[href*="font-awesome"]')) {
+          console.log("Font Awesome timeout, loading fallback");
+          loadFontAwesome();
+        }
+      }, 3000);
+    </script>
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Theme Color for Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#2563eb" />
+
+    <!-- Enhanced SEO Meta Tags -->
+    <title>
+      %sveltekit.title% - Hay Hill Clothing | Pakaian Custom Premium Indonesia
+    </title>
+    <meta
+      name="description"
+      content="Hay Hill Clothing - Spesialis pakaian custom premium dengan 15+ tahun pengalaman. Kaos, polo, kemeja, dan seragam berkualitas tinggi. Konsultasi gratis!"
+    />
+    <meta
+      name="keywords"
+      content="pakaian custom, kaos custom, polo shirt, kemeja kantor, seragam, sablon, bordir, clothing indonesia"
+    />
+    <meta name="author" content="Hay Hill Clothing" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://hayhillclothing.com/" />
+    <meta
+      property="og:title"
+      content="Hay Hill Clothing - Pakaian Custom Premium Indonesia"
+    />
+    <meta
+      property="og:description"
+      content="Spesialis pakaian custom premium dengan 15+ tahun pengalaman. Konsultasi gratis sekarang!"
+    />
+    <meta
+      property="og:image"
+      content="%sveltekit.assets%/images/og-image.jpg"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://hayhillclothing.com/" />
+    <meta
+      property="twitter:title"
+      content="Hay Hill Clothing - Pakaian Custom Premium Indonesia"
+    />
+    <meta
+      property="twitter:description"
+      content="Spesialis pakaian custom premium dengan 15+ tahun pengalaman. Konsultasi gratis sekarang!"
+    />
+    <meta
+      property="twitter:image"
+      content="%sveltekit.assets%/images/og-image.jpg"
+    />
+
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Hay Hill Clothing",
+        "description": "Spesialis pakaian custom premium",
+        "url": "https://hayhillclothing.com",
+        "logo": "https://hayhillclothing.com/images/logo.jpg",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+62-877-7629-9650",
+          "contactType": "customer service"
+        }
+      }
+    </script>
+
+    <!-- Performance optimizations -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+
+    <!-- Font Awesome debugging styles -->
+    <style>
+      /* Ensure Font Awesome loads properly */
+      [class^="fa"],
+      [class*=" fa"] {
+        font-family: "Font Awesome 6 Free", "Font Awesome 6 Pro", "FontAwesome",
+          "Font Awesome" !important;
+        font-weight: 900 !important;
+        font-style: normal !important;
+      }
+      .fab {
+        font-family: "Font Awesome 6 Brands", "FontAwesome" !important;
+        font-weight: 400 !important;
+      }
+    </style>
+
+    %sveltekit.head%
+  </head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents">%sveltekit.body%</div>
+  </body>
+</html>
