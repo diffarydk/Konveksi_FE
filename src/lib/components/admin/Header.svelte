@@ -317,13 +317,13 @@
   /* Mobile Responsiveness */
   @media (min-width: 1025px) {
     .toggle-sidebar {
-      display: none; /* Sembunyikan hamburger di desktop karena ada collapse button di sidebar */
+      display: none !important; /* FORCE hide hamburger di desktop */
     }
   }
 
   @media (max-width: 1024px) {
     .toggle-sidebar {
-      display: flex; /* Pastikan hamburger button tampil di mobile */
+      display: flex !important; /* FORCE show hamburger button di mobile */
     }
 
     .search-container {
@@ -343,22 +343,38 @@
     .toggle-sidebar {
       width: 44px;
       height: 44px; /* Larger touch target for mobile */
+      background: rgba(
+        37,
+        99,
+        235,
+        0.1
+      ); /* Light blue background for visibility */
+      border: 1px solid rgba(37, 99, 235, 0.2);
+    }
+
+    .toggle-sidebar:hover {
+      background: rgba(37, 99, 235, 0.15);
     }
 
     .hamburger-line {
       width: 22px;
       height: 2.5px;
+      background: #2563eb; /* Blue color for mobile visibility */
+    }
+
+    .toggle-sidebar .hamburger-line {
+      background: #2563eb; /* Ensure blue color on mobile */
     }
   }
 
   .toggle-sidebar {
-    background: none;
-    border: none;
+    background: rgba(37, 99, 235, 0.05);
+    border: 1px solid rgba(37, 99, 235, 0.1);
     cursor: pointer;
     padding: 0.5rem;
     border-radius: var(--border-radius-md);
     transition: all 0.2s;
-    display: flex;
+    display: none; /* Hidden by default (desktop) */
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -370,13 +386,14 @@
   }
 
   .toggle-sidebar:hover {
-    background: #f1f5f9;
+    background: rgba(37, 99, 235, 0.1);
+    border-color: rgba(37, 99, 235, 0.2);
   }
 
   .hamburger-line {
     width: 20px;
     height: 2px;
-    background: #64748b;
+    background: #1e293b; /* Darker color for better visibility */
     border-radius: 2px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     transform-origin: center;
@@ -384,6 +401,10 @@
 
   .toggle-sidebar:hover .hamburger-line {
     background: #2563eb;
+  }
+
+  .toggle-sidebar.active .hamburger-line {
+    background: #2563eb; /* Blue when active */
   }
 
   .toggle-sidebar.active .hamburger-line:nth-child(1) {
