@@ -62,10 +62,19 @@ body {
     font-size: var(--font-size-base);
 }
 
-/* Smooth scrolling */
-html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 80px;
+/* Smooth scrolling - Dikontrol berdasarkan user preference */
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 80px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+        scroll-padding-top: 80px;
+    }
 }
 
 /* Custom Scrollbar */
@@ -315,10 +324,7 @@ html {
     }
 }
 
-/* Add smooth scroll for better UX */
-html {
-    scroll-behavior: smooth;
-}
+/* Smooth scroll sudah dikonfigurasi di atas */
 
 /* Improved focus states for accessibility */
 *:focus {

@@ -171,9 +171,10 @@
 
   function startAutoSlide() {
     if (autoSlideInterval) clearInterval(autoSlideInterval);
+    // Delay auto-slide lebih lama untuk mengurangi gangguan
     autoSlideInterval = setInterval(() => {
       currentSlide = (currentSlide + 1) % featuredProducts.length;
-    }, 5000);
+    }, 8000);
   }
 
   function setActiveCategory(categoryId: string) {

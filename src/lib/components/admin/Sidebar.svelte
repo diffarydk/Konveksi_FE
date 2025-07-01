@@ -624,9 +624,9 @@
     height: 100vh;
     overflow-y: auto;
     overflow-x: hidden;
-    z-index: 100;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 2px 0 15px -3px rgba(0, 0, 0, 0.1);
+    z-index: 99;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 2px 0 10px -3px rgba(0, 0, 0, 0.08);
     display: flex;
     flex-direction: column;
     color: #1e293b;
@@ -641,12 +641,12 @@
 
   .sidebar.mobile {
     transform: translateX(-100%);
-    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
   .sidebar.mobile.active {
     transform: translateX(0);
-    box-shadow: 4px 0 25px -5px rgba(0, 0, 0, 0.3);
+    box-shadow: 4px 0 20px -5px rgba(0, 0, 0, 0.25);
   }
 
   /* Prevent body scroll when sidebar is open on mobile */
@@ -909,24 +909,24 @@
     background: #ef4444;
   }
 
-  /* Mobile Sidebar Overlay */
+  /* Mobile Sidebar Overlay - Lebih ringan */
   .sidebar-overlay {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
+    background: rgba(0, 0, 0, 0.25);
+    z-index: 98;
     cursor: pointer;
     touch-action: manipulation;
-    /* Removed blur for better mobile performance */
+    /* Overlay ringan untuk mobile performance */
   }
 
   @media (max-width: 768px) {
     .sidebar-overlay {
-      background: rgba(0, 0, 0, 0.6);
-      /* Removed backdrop-filter blur for optimal mobile performance */
+      background: rgba(0, 0, 0, 0.35);
+      /* Overlay transparan lebih ringan di mobile */
     }
   }
 
@@ -956,7 +956,7 @@
   @media (max-width: 1024px) {
     .sidebar {
       transform: translateX(-100%);
-      z-index: 1001;
+      z-index: 99;
       width: 280px !important; /* Force full width on mobile */
     }
 

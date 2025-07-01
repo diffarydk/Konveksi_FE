@@ -25,7 +25,7 @@
     { icon: "fab fa-instagram", url: "#", name: "Instagram" },
     {
       icon: "fab fa-whatsapp",
-      url: "https://wa.me/628123456789",
+      url: "https://wa.me/6287776299650",
       name: "WhatsApp",
     },
     { icon: "fab fa-facebook-f", url: "#", name: "Facebook" },
@@ -37,19 +37,19 @@
     {
       icon: "fab fa-whatsapp",
       text: "WhatsApp",
-      value: "+62 812-3456-7890",
-      link: "https://wa.me/628123456789",
+      value: "+62 877-7629-9650",
+      link: "https://wa.me/6287776299650",
     },
     {
       icon: "fas fa-envelope",
       text: "Email",
-      value: "info@hayhillclothing.com",
-      link: "mailto:info@hayhillclothing.com",
+      value: "diffarydzikrik23@gmail.com",
+      link: "mailto:diffarydzikrik23@gmail.com",
     },
     {
       icon: "fas fa-map-marker-alt",
       text: "Lokasi",
-      value: "Jakarta, Indonesia",
+      value: "Bandung, Jawa Barat, Indonesia",
       link: "#address",
     },
   ];
