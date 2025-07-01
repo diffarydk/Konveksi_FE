@@ -3,20 +3,10 @@ import { browser } from '$app/environment';
 import { get } from 'svelte/store';
 import { auth } from '$lib/stores/auth';
 import { refreshAccessToken, logout } from './auth';
+import { ENV } from '$lib/config/environment';
 
-// Base URL sesuai API Documentation v2.0
-const getBaseUrl = () => {
-  // Development URL sesuai dokumentasi
-  if (browser && import.meta.env.VITE_API_BASE_URL) {
-    return import.meta.env.VITE_API_BASE_URL;
-  }
-  
-  // ✅ UPDATED: Use production URL for Netlify deployment
-  // Change to your production backend URL
-  return 'https://f808-180-254-65-209.ngrok-free.app/api/v1';
-};
-
-const baseUrl = getBaseUrl();
+// Use centralized environment configuration
+const baseUrl = ENV.API_BASE_URL;
 
 /**
  * Extract CSRF token from cookies for Django
@@ -47,6 +37,15 @@ function buildUrl(url: string, params?: Record<string, any>): string {
   
   const queryString = searchParams.toString();
   return queryString ? `${url}?${queryString}` : url;
+}
+
+/**
+ * Safely join URL segments avoiding double slashes
+ */
+function joinUrlPath(base: string, path: string): string {
+  const cleanBase = base.replace(/\/$/, ''); // Remove trailing slash
+  const cleanPath = path.replace(/^\//, ''); // Remove leading slash
+  return `${cleanBase}/${cleanPath}`;
 }
 
 // Add debounce for token refresh to prevent multiple simultaneous refreshes
@@ -113,7 +112,7 @@ async function apiFetch(
     // Also check localStorage as backup
     if (!accessToken) {
       const token = localStorage.getItem('accessToken');
-      accessToken = token ?? undefined;
+      accessToken = token ? token : undefined;
     }
     
     if (accessToken) {
@@ -133,8 +132,8 @@ async function apiFetch(
     }
   }
   
-  // Build full URL
-  const fullUrl = buildUrl(`${baseUrl}${url}`, params);
+  // Build full URL using safe URL joining
+  const fullUrl = buildUrl(joinUrlPath(baseUrl, url), params);
   
   const fetchOptions: RequestInit = {
     ...options,
