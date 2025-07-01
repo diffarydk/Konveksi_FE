@@ -18,26 +18,26 @@
 	},
 	"devDependencies": {
 		"@melt-ui/pp": "^0.3.2",
+		"@tsconfig/svelte": "^5.0.0",
+		"rimraf": "^6.0.1",
+		"svelte-check": "^4.0.0",
+		"svelte-preprocess": "^6.0.3",
+		"typescript": "^5.8.3"
+	},
+	"dependencies": {
+		"@fortawesome/fontawesome-free": "^6.7.2",
 		"@melt-ui/svelte": "^0.86.6",
 		"@sveltejs/adapter-auto": "^6.0.0",
 		"@sveltejs/kit": "^2.16.0",
 		"@sveltejs/vite-plugin-svelte": "^5.0.0",
-		"@tsconfig/svelte": "^5.0.0",
-		"rimraf": "^6.0.1",
-		"svelte": "^5.0.0",
-		"svelte-check": "^4.0.0",
-		"svelte-preprocess": "^6.0.3",
-		"tslib": "^2.6.2",
-		"typescript": "^5.8.3",
-		"vite": "^6.2.6"
-	},
-	"dependencies": {
-		"@fortawesome/fontawesome-free": "^6.7.2",
 		"chart.js": "^4.4.9",
 		"nodejs": "^0.0.0",
+		"svelte": "^5.0.0",
 		"svelte-carousel": "^1.0.25",
 		"svelte-intersection-observer": "^1.0.0",
 		"swiper": "^11.2.6",
+		"tslib": "^2.6.2",
+		"vite": "^6.2.6",
 		"zod": "^3.25.67"
 	}
 }
