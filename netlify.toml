@@ -1,6 +1,6 @@
 [build]
   command = "npm install && npx svelte-kit sync && npm run build"
-  publish = "build"
+  publish = ".svelte-kit/netlify"
 
 [build.environment]
   NODE_VERSION = "20.11.1"
