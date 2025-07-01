@@ -850,6 +850,9 @@
     object-fit: cover;
     border-radius: 8px;
     transition: all 0.3s ease;
+    /* Optimize for different pixel densities */
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
   }
 
   .navbar.scrolled .logo-wrapper img {

@@ -689,6 +689,212 @@
     align-items: start;
   }
 
+  /* Tablet Styles */
+  @media (max-width: 1024px) {
+    .features-layout-enhanced {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .section-title-enhanced {
+      font-size: 2.5rem;
+    }
+
+    .feature-card-enhanced {
+      padding: 2rem;
+    }
+
+    .table-grid-header,
+    .table-row {
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 0.5rem;
+      padding: 0.75rem;
+      font-size: 0.9rem;
+    }
+  }
+
+  /* Mobile Styles */
+  @media (max-width: 768px) {
+    .features-enhanced {
+      padding: 3rem 1rem;
+    }
+
+    .section-header-enhanced {
+      margin-bottom: 2rem;
+    }
+
+    .section-title-enhanced {
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-desc-enhanced {
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .features-layout-enhanced {
+      gap: 1.5rem;
+    }
+
+    .feature-card-enhanced {
+      padding: 1.5rem;
+      border-radius: 16px;
+    }
+
+    .feature-header-enhanced {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .feature-icon-enhanced {
+      font-size: 2rem;
+      width: 50px;
+      height: 50px;
+    }
+
+    .feature-stats-enhanced {
+      font-size: 1rem;
+      padding: 0.4rem 0.8rem;
+    }
+
+    .feature-title-enhanced {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .feature-desc-enhanced {
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Comparison table mobile optimization */
+    .comparison-table {
+      padding: 1rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+    }
+
+    .table-grid-header,
+    .table-row {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .table-grid-header {
+      background: var(--primary);
+      color: white;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    .table-row {
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      margin-bottom: 0.75rem;
+      display: block;
+      padding: 1rem;
+    }
+
+    .table-row > div {
+      margin-bottom: 0.5rem;
+      padding: 0.25rem 0;
+    }
+
+    .table-row > div:first-child {
+      font-weight: 600;
+      color: var(--text-dark);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.5rem;
+    }
+
+    /* Secondary features mobile */
+    .features-secondary-enhanced {
+      gap: 1rem;
+    }
+
+    .feature-card-compact-enhanced {
+      padding: 1.25rem;
+      border-radius: 12px;
+      flex-direction: column;
+      text-align: center;
+      gap: 0.75rem;
+    }
+
+    .compact-icon-enhanced {
+      font-size: 1.5rem;
+      width: 45px;
+      height: 45px;
+      align-self: center;
+    }
+
+    .compact-expand-enhanced {
+      display: none; /* Hide expand arrow on mobile */
+    }
+
+    /* CTA card mobile */
+    .cta-card-enhanced {
+      padding: 1.5rem;
+      border-radius: 16px;
+      text-align: center;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .cta-btn-primary,
+    .cta-btn-secondary {
+      width: 100%;
+      justify-content: center;
+      padding: 1rem 1.5rem;
+      font-size: 1rem;
+    }
+  }
+
+  /* Small Mobile Styles */
+  @media (max-width: 480px) {
+    .features-enhanced {
+      padding: 2rem 0.75rem;
+    }
+
+    .section-title-enhanced {
+      font-size: 1.75rem;
+    }
+
+    .feature-card-enhanced {
+      padding: 1.25rem;
+    }
+
+    .feature-title-enhanced {
+      font-size: 1.125rem;
+    }
+
+    .comparison-table {
+      padding: 0.75rem;
+    }
+
+    .table-row {
+      padding: 0.75rem;
+    }
+
+    .cta-card-enhanced {
+      padding: 1.25rem;
+    }
+
+    .header-badge {
+      font-size: 0.8rem;
+      padding: 0.4rem 1rem;
+    }
+  }
+
   /* Enhanced primary features */
   .features-primary-enhanced {
     display: flex;

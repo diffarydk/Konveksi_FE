@@ -469,8 +469,38 @@
     }
   }
 
-  /* Mobile optimization - Dynamic interactions */
+  /* Tablet Styles */
+  @media (max-width: 1024px) {
+    .hero-minimal {
+      padding: 1.5rem;
+    }
+
+    .hero-container {
+      gap: 3rem;
+      max-width: 100%;
+    }
+
+    .hero-title-minimal {
+      font-size: clamp(2rem, 7vw, 3.5rem);
+    }
+
+    .hero-desc-minimal {
+      font-size: 1rem;
+      max-width: 100%;
+    }
+
+    .hero-stats-card {
+      padding: 1.75rem;
+    }
+  }
+
+  /* Mobile Styles */
   @media (max-width: 768px) {
+    .hero-minimal {
+      padding: 1rem;
+      min-height: 100vh;
+    }
+
     .hero-container {
       grid-template-columns: 1fr;
       gap: 2rem;
@@ -485,6 +515,20 @@
       order: 2;
       transform: none;
       padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .hero-title-minimal {
+      font-size: clamp(2rem, 8vw, 2.5rem);
+      margin-bottom: 1rem;
+    }
+
+    .hero-desc-minimal {
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+      max-width: 100%;
+      opacity: 0.95;
     }
 
     .stats-grid {
@@ -506,43 +550,132 @@
       font-size: 1.4rem;
     }
 
+    .stat-label {
+      font-size: 0.8rem;
+    }
+
     .cta-minimal {
       justify-content: center;
+      flex-direction: column;
+      gap: 0.75rem;
     }
 
     .btn-minimal {
-      flex: 1;
+      width: 100%;
       justify-content: center;
-      min-width: 150px;
-    }
-
-    /* Mobile swipe gesture hint */
-    .hero-minimal::after {
-      content: "Swipe untuk navigasi";
-      position: absolute;
-      bottom: 1rem;
-      right: 1rem;
-      font-size: 0.7rem;
-      color: rgba(255, 255, 255, 0.5);
-      animation: fadeInOut 3s infinite;
-    }
-
-    @keyframes fadeInOut {
-      0%,
-      70%,
-      100% {
-        opacity: 0;
-      }
-      20%,
-      50% {
-        opacity: 1;
-      }
-    }
-
-    /* Touch-friendly adjustments */
-    .btn-minimal {
-      padding: 1.2rem 2rem;
       min-height: 48px;
+      padding: 1rem 2rem;
+      font-size: 1rem;
+    }
+
+    .btn-icon,
+    .btn-arrow {
+      width: 28px;
+      height: 28px;
+      font-size: 0.8rem;
+    }
+
+    .badge-minimal {
+      font-size: 0.8rem;
+      padding: 0.4rem 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Geometric shapes mobile optimization */
+    .shape-1 {
+      width: 200px;
+      height: 200px;
+      top: 5%;
+      right: 5%;
+    }
+
+    .shape-2 {
+      width: 150px;
+      height: 150px;
+      bottom: 15%;
+      left: 5%;
+    }
+
+    .shape-3 {
+      width: 100px;
+      height: 100px;
+      top: 40%;
+      left: 2%;
+    }
+
+    /* Remove swipe hint for cleaner look */
+    .hero-minimal::after {
+      display: none;
+    }
+  }
+
+  /* Small Mobile Styles */
+  @media (max-width: 480px) {
+    .hero-minimal {
+      padding: 0.75rem;
+    }
+
+    .hero-container {
+      gap: 1.5rem;
+    }
+
+    .hero-title-minimal {
+      font-size: clamp(1.75rem, 9vw, 2rem);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-desc-minimal {
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-stats-card {
+      padding: 1.25rem;
+    }
+
+    .stats-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .stat-minimal {
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+    }
+
+    .stat-number {
+      font-size: 1.25rem;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+    }
+
+    .btn-minimal {
+      padding: 1.125rem 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .badge-minimal {
+      font-size: 0.75rem;
+      padding: 0.35rem 0.9rem;
+    }
+
+    /* Hide some geometric shapes for performance */
+    .shape-2,
+    .shape-3 {
+      display: none;
+    }
+
+    .shape-1 {
+      width: 150px;
+      height: 150px;
+      opacity: 0.5;
     }
   }
 

@@ -216,93 +216,124 @@ body {
     }
 }
 
-/* Responsive */
+/* =================================
+   RESPONSIVE DESIGN - DESKTOP FIRST
+   ================================= */
+
+/* Tablet Styles (1024px and below) */
 @media (max-width: 1024px) {
+    :root {
+        --section-padding: 4rem;
+        --container-width: 100%;
+    }
+
     .hero-title {
         font-size: 3rem;
     }
+
+    /* Convert multi-column layouts to fewer columns */
+    .grid-3-cols {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    
+    .grid-4-cols {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
 }
 
+/* Mobile Landscape and Large Portrait (768px and below) */
 @media (max-width: 768px) {
-    .mobile-nav-toggle {
-        display: block;
+    :root {
+        --section-padding: 3rem;
+        --spacing-lg: 2rem;
+        --spacing-xl: 4rem;
     }
 
-    .nav-links {
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 70%;
-        height: 100vh;
-        background: var(--white);
-        flex-direction: column;
-        padding: 5rem 2rem;
-        transform: translateX(100%);
-        transition: transform 0.3s ease;
-        z-index: 999;
-    }
-
-    .nav-links.active {
-        transform: translateX(0);
-        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
-    }
-
-    .nav-close {
-        position: absolute;
-        top: 2rem;
-        right: 2rem;
-        background: none;
-        border: none;
-        font-size: 1.5rem;
-        color: var(--text-dark);
-        cursor: pointer;
+    /* Typography Adjustments for Mobile */
+    .section-title {
+        font-size: 2rem !important;
+        line-height: 1.2;
     }
 
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2.5rem !important;
         line-height: 1.1;
     }
 
-    .hero-description {
-        font-size: 1rem;
-        margin-bottom: 2rem;
+    h1 { font-size: 1.75rem !important; }
+    h2 { font-size: 1.5rem !important; }
+    h3 { font-size: 1.25rem !important; }
+    h4 { font-size: 1.125rem !important; }
+
+    /* Convert ALL multi-column layouts to single column */
+    .grid-2-cols,
+    .grid-3-cols,
+    .grid-4-cols,
+    .features-layout,
+    .products-grid,
+    .stats-grid,
+    .contact-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
     }
 
+    /* Flex layouts to column */
+    .flex-row-mobile {
+        flex-direction: column !important;
+        align-items: stretch !important;
+    }
+
+    /* Touch Target Optimization */
+    .btn, 
+    .nav-links a, 
+    .mobile-nav-toggle,
+    .card,
+    .product-card,
+    .feature-card,
+    button,
+    a[role="button"] {
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    .btn {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        justify-content: center;
+    }
+
+    /* Form Optimization */
+    input, 
+    textarea, 
+    select,
+    .form-control {
+        min-height: 44px;
+        font-size: 16px; /* Prevents zoom on iOS */
+        padding: 0.875rem 1rem;
+    }
+
+    /* Container and Spacing */
+    .container,
+    .section-container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    section {
+        padding: var(--section-padding) 1rem;
+    }
+
+    /* Content Reflow */
     .hero-buttons {
         flex-direction: column;
         gap: 1rem;
         width: 100%;
     }
 
-    .btn {
-        width: 100%;
-        justify-content: center;
-        padding: 1.2rem 2rem;
-    }
-
     .hero-stats {
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
         margin-top: 2rem;
-    }
-
-    .stat-item {
-        padding: 1rem 0.5rem;
-    }
-
-    /* Touch-friendly interactive elements */
-    .btn, .nav-links a, .mobile-nav-toggle {
-        min-height: 44px;
-    }
-
-    /* Improved form inputs */
-    input, textarea, select {
-        min-height: 44px;
-        font-size: 16px; /* Prevents zoom on iOS */
-    }
-
-    .contact-grid {
-        grid-template-columns: 1fr;
     }
 
     .process-timeline::before {
@@ -321,6 +352,58 @@ body {
 
     .process-number {
         left: 30px !important;
+    }
+}
+
+/* Standard Mobile Portrait (480px and below) */
+@media (max-width: 480px) {
+    :root {
+        --section-padding: 2rem;
+        --spacing-lg: 1.5rem;
+        --spacing-xl: 3rem;
+    }
+
+    /* Further Typography Reduction */
+    .section-title {
+        font-size: 1.75rem !important;
+    }
+
+    .hero-title {
+        font-size: 2rem !important;
+    }
+
+    h1 { font-size: 1.5rem !important; }
+    h2 { font-size: 1.375rem !important; }
+    h3 { font-size: 1.125rem !important; }
+
+    /* Tighter Spacing */
+    .container,
+    .section-container {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+
+    section {
+        padding: var(--section-padding) 0.75rem;
+    }
+
+    /* Stack even 2-column grids */
+    .hero-stats {
+        grid-template-columns: 1fr;
+    }
+
+    /* Larger touch targets for small screens */
+    .btn {
+        padding: 1.125rem 2rem;
+        font-size: 1.1rem;
+    }
+
+    /* Card adjustments */
+    .card,
+    .product-card,
+    .feature-card {
+        margin-bottom: 1rem;
+        border-radius: 12px;
     }
 }
 

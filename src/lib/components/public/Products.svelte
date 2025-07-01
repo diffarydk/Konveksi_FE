@@ -779,6 +779,249 @@
     margin-bottom: 4rem;
   }
 
+  /* Tablet Styles */
+  @media (max-width: 1024px) {
+    .products-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .featured-card {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      text-align: center;
+    }
+
+    .featured-image {
+      order: 1;
+    }
+
+    .featured-content {
+      order: 2;
+    }
+
+    .category-filter {
+      gap: 0.75rem;
+    }
+
+    .filter-btn {
+      padding: 0.6rem 1.2rem;
+      font-size: 0.9rem;
+    }
+  }
+
+  /* Mobile Styles */
+  @media (max-width: 768px) {
+    .products-enhanced {
+      padding: 3rem 1rem;
+    }
+
+    .section-title {
+      font-size: 2rem;
+    }
+
+    .products-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .featured-carousel {
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      border-radius: 16px;
+    }
+
+    .carousel-header {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .carousel-header h3 {
+      font-size: 1.25rem;
+      text-align: center;
+    }
+
+    .featured-card {
+      padding: 1.5rem;
+      border-radius: 16px;
+    }
+
+    .featured-content h4 {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .featured-price {
+      margin-bottom: 1.5rem;
+    }
+
+    .current-price {
+      font-size: 1.5rem;
+    }
+
+    .category-filter {
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+
+    .filter-btn {
+      padding: 0.75rem 1rem;
+      font-size: 0.85rem;
+      flex: 1;
+      min-width: 120px;
+      max-width: 150px;
+    }
+
+    .filter-icon {
+      font-size: 1rem;
+    }
+
+    .product-card-enhanced {
+      border-radius: 16px;
+    }
+
+    .product-image {
+      height: 220px;
+    }
+
+    .product-content {
+      padding: 1.25rem;
+    }
+
+    .product-title {
+      font-size: 1.125rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .product-description {
+      font-size: 0.85rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .product-features {
+      margin-bottom: 1rem;
+    }
+
+    .feature-tag {
+      font-size: 0.7rem;
+      padding: 0.25rem 0.6rem;
+    }
+
+    .product-price {
+      margin-bottom: 1rem;
+    }
+
+    .price-current {
+      font-size: 1.1rem;
+    }
+
+    .product-actions {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .action-btn-primary,
+    .action-btn-secondary {
+      width: 100%;
+      justify-content: center;
+      padding: 0.75rem 1rem;
+      font-size: 0.9rem;
+    }
+
+    /* CTA Section Mobile */
+    .products-cta {
+      text-align: center;
+      padding: 2rem 1rem;
+      border-radius: 16px;
+    }
+
+    .cta-title {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .cta-description {
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+      gap: 0.75rem;
+      align-items: stretch;
+    }
+
+    .cta-primary,
+    .cta-secondary {
+      width: 100%;
+      justify-content: center;
+      padding: 1rem 1.5rem;
+      font-size: 1rem;
+    }
+  }
+
+  /* Small Mobile Styles */
+  @media (max-width: 480px) {
+    .products-enhanced {
+      padding: 2rem 0.75rem;
+    }
+
+    .section-title {
+      font-size: 1.75rem;
+    }
+
+    .featured-carousel {
+      padding: 1rem;
+    }
+
+    .featured-card {
+      padding: 1rem;
+    }
+
+    .featured-content h4 {
+      font-size: 1.25rem;
+    }
+
+    .current-price {
+      font-size: 1.25rem;
+    }
+
+    .category-filter {
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .filter-btn {
+      flex: 1;
+      min-width: 100px;
+      max-width: 140px;
+      padding: 0.6rem 0.75rem;
+      font-size: 0.8rem;
+    }
+
+    .product-content {
+      padding: 1rem;
+    }
+
+    .product-title {
+      font-size: 1rem;
+    }
+
+    .action-btn-primary,
+    .action-btn-secondary {
+      padding: 0.875rem 1rem;
+      font-size: 0.85rem;
+    }
+
+    .header-badge {
+      font-size: 0.8rem;
+      padding: 0.4rem 1rem;
+    }
+  }
+
   .product-card-enhanced {
     background: var(--white);
     border-radius: 20px;
