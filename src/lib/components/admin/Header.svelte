@@ -43,7 +43,7 @@
     },
   ];
 
-  // Toggle sidebar
+  // Toggle sidebar visibility (untuk mobile)
   function toggleSidebar() {
     sidebar.update((state) => ({ ...state, visible: !state.visible }));
   }
@@ -300,7 +300,7 @@
     border-bottom: 1px solid #e5e7eb;
     position: sticky;
     top: 0;
-    z-index: 99;
+    z-index: 100; /* Higher z-index to ensure hamburger button visible */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -315,6 +315,12 @@
   }
 
   /* Mobile Responsiveness */
+  @media (min-width: 1025px) {
+    .toggle-sidebar {
+      display: none; /* Sembunyikan hamburger di desktop karena ada collapse button di sidebar */
+    }
+  }
+
   @media (max-width: 1024px) {
     .toggle-sidebar {
       display: flex; /* Pastikan hamburger button tampil di mobile */
@@ -359,6 +365,8 @@
     width: 40px;
     height: 40px;
     gap: 4px;
+    position: relative;
+    z-index: 101; /* Ensure hamburger button is on top */
   }
 
   .toggle-sidebar:hover {

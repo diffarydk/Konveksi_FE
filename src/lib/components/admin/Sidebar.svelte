@@ -327,19 +327,8 @@
       {/if}
     </a>
 
-    <!-- Close button for mobile -->
-    {#if isMobile}
-      <button
-        class="mobile-close-btn"
-        on:click={() =>
-          sidebarStore.update((state) => ({ ...state, visible: false }))}
-        aria-label="Tutup menu"
-        title="Tutup menu"
-      >
-        <i class="fas fa-times"></i>
-      </button>
-    {:else}
-      <!-- Collapse button for desktop -->
+    <!-- Hanya collapse button untuk desktop (hamburger di header untuk mobile) -->
+    {#if !isMobile}
       <button
         class="collapse-toggle"
         on:click={toggleCollapse}
@@ -682,6 +671,10 @@
     justify-content: center;
   }
 
+  .sidebar-header.mobile {
+    justify-content: flex-start; /* Logo di kiri saja untuk mobile */
+  }
+
   .logo {
     text-decoration: none;
     color: white;
@@ -919,28 +912,7 @@
 
   /* Mobile Sidebar Overlay - DIHAPUS untuk UX yang lebih baik */
   /* Tidak ada overlay gelap lagi yang mengganggu user */
-
-  /* Mobile Close Button */
-  .mobile-close-btn {
-    background: rgba(255, 255, 255, 0.15);
-    border: none;
-    color: white;
-    width: 40px;
-    height: 40px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s;
-    font-size: 1.125rem;
-    flex-shrink: 0;
-  }
-
-  .mobile-close-btn:hover {
-    background: rgba(255, 255, 255, 0.25);
-    transform: scale(1.05);
-  }
+  /* Mobile close button dihapus - gunakan hamburger di header */
 
   /* Responsive Design */
   @media (max-width: 1024px) {
@@ -959,9 +931,9 @@
       width: 280px !important;
     }
 
-    .sidebar.mobile .sidebar-header.collapsed {
+    .sidebar.mobile .sidebar-header {
       padding: 1.5rem;
-      justify-content: space-between;
+      justify-content: flex-start; /* Logo di kiri untuk mobile */
     }
 
     .sidebar.mobile .menu-items.collapsed {
