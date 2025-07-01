@@ -8,10 +8,7 @@ const config = {
   preprocess: sequence([vitePreprocess(), preprocessMeltUI()]),
   kit: {
     // Using Vercel adapter for optimal deployment
-    adapter: adapter({
-      // Optional: Enable edge runtime for better performance
-      runtime: 'nodejs18.x'
-    })
+    adapter: adapter()
   }
 };
 export default config;
