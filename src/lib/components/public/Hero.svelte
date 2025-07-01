@@ -199,6 +199,8 @@
     display: flex;
     align-items: center;
     padding: 2rem;
+    /* Tambahan padding top untuk mengcompensate fixed navbar */
+    padding-top: calc(2rem + 80px);
   }
 
   /* Geometric background shapes */
@@ -473,6 +475,8 @@
   @media (max-width: 1024px) {
     .hero-minimal {
       padding: 1.5rem;
+      /* Adjust padding top untuk tablet */
+      padding-top: calc(1.5rem + 75px);
     }
 
     .hero-container {
@@ -499,6 +503,8 @@
     .hero-minimal {
       padding: 1rem;
       min-height: 100vh;
+      /* Padding top yang cukup untuk mobile navbar */
+      padding-top: calc(1rem + 70px);
     }
 
     .hero-container {
@@ -613,6 +619,8 @@
   @media (max-width: 480px) {
     .hero-minimal {
       padding: 0.75rem;
+      /* Padding top untuk small mobile */
+      padding-top: calc(0.75rem + 65px);
     }
 
     .hero-container {

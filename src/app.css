@@ -227,6 +227,11 @@ body {
         --container-width: 100%;
     }
 
+    /* Scroll padding untuk tablet */
+    html {
+        scroll-padding-top: 75px;
+    }
+
     .hero-title {
         font-size: 3rem;
     }
@@ -247,6 +252,11 @@ body {
         --section-padding: 3rem;
         --spacing-lg: 2rem;
         --spacing-xl: 4rem;
+    }
+
+    /* Adjust scroll padding untuk mobile navbar */
+    html {
+        scroll-padding-top: 70px;
     }
 
     /* Typography Adjustments for Mobile */
@@ -361,6 +371,11 @@ body {
         --section-padding: 2rem;
         --spacing-lg: 1.5rem;
         --spacing-xl: 3rem;
+    }
+
+    /* Scroll padding untuk small mobile */
+    html {
+        scroll-padding-top: 65px;
     }
 
     /* Further Typography Reduction */
