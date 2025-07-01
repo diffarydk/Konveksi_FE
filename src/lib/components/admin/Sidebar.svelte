@@ -209,6 +209,30 @@
     // Add keyboard event listener
     if (browser) {
       window.addEventListener("keydown", handleKeydown);
+
+      // Auto-close sidebar on mobile when clicking outside
+      const handleClickOutside = (event: MouseEvent) => {
+        if (isMobile && $sidebarStore.visible) {
+          const sidebar = document.querySelector(".sidebar");
+          const header = document.querySelector(".header");
+
+          if (
+            sidebar &&
+            header &&
+            !sidebar.contains(event.target as Node) &&
+            !header.contains(event.target as Node)
+          ) {
+            sidebarStore.update((state) => ({ ...state, visible: false }));
+          }
+        }
+      };
+
+      document.addEventListener("click", handleClickOutside);
+
+      return () => {
+        window.removeEventListener("keydown", handleKeydown);
+        document.removeEventListener("click", handleClickOutside);
+      };
     }
 
     return () => {
@@ -599,20 +623,8 @@
     </div>
   </nav>
 
-  <!-- Mobile Overlay with improved transitions -->
-  {#if $sidebarStore.visible && isMobile}
-    <div
-      class="sidebar-overlay"
-      on:click={() =>
-        sidebarStore.update((state) => ({ ...state, visible: false }))}
-      on:touchstart={() =>
-        sidebarStore.update((state) => ({ ...state, visible: false }))}
-      transition:fade={{ duration: 200 }}
-      role="button"
-      tabindex="0"
-      aria-label="Tutup menu"
-    ></div>
-  {/if}
+  <!-- Mobile Overlay - Hapus overlay gelap yang mengganggu -->
+  <!-- Overlay dihilangkan untuk better UX -->
 </aside>
 
 <style>
@@ -649,12 +661,8 @@
     box-shadow: 4px 0 20px -5px rgba(0, 0, 0, 0.25);
   }
 
-  /* Prevent body scroll when sidebar is open on mobile */
-  .sidebar.mobile.active ~ :global(body) {
-    overflow: hidden;
-    position: fixed;
-    width: 100%;
-  }
+  /* HAPUS: Tidak perlu block body scroll karena tidak ada overlay */
+  /* Body tetap bisa di-scroll untuk UX yang lebih baik */
 
   .sidebar-header {
     padding: 1.5rem;
@@ -909,26 +917,8 @@
     background: #ef4444;
   }
 
-  /* Mobile Sidebar Overlay - Lebih ringan */
-  .sidebar-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.25);
-    z-index: 98;
-    cursor: pointer;
-    touch-action: manipulation;
-    /* Overlay ringan untuk mobile performance */
-  }
-
-  @media (max-width: 768px) {
-    .sidebar-overlay {
-      background: rgba(0, 0, 0, 0.35);
-      /* Overlay transparan lebih ringan di mobile */
-    }
-  }
+  /* Mobile Sidebar Overlay - DIHAPUS untuk UX yang lebih baik */
+  /* Tidak ada overlay gelap lagi yang mengganggu user */
 
   /* Mobile Close Button */
   .mobile-close-btn {

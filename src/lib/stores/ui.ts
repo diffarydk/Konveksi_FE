@@ -9,10 +9,19 @@ interface SidebarState {
 
 // Create sidebar store with persistence
 function createSidebarStore() {
-  // Get saved state from localStorage
-  const initialState: SidebarState = browser ? 
-    JSON.parse(localStorage.getItem('sidebar') || '{"visible": true, "collapsed": false}') : 
-    { visible: true, collapsed: false };
+  // Check if device is mobile
+  const isMobile = browser ? window.innerWidth < 1024 : false;
+  
+  // Different default behavior for mobile vs desktop
+  const defaultState = isMobile 
+    ? { visible: false, collapsed: false } // Hidden by default on mobile
+    : { visible: true, collapsed: false };  // Visible by default on desktop
+  
+  // Get saved state from localStorage, but respect mobile defaults
+  const savedState = browser ? localStorage.getItem('sidebar') : null;
+  const initialState: SidebarState = savedState 
+    ? JSON.parse(savedState)
+    : defaultState;
   
   const { subscribe, set, update } = writable<SidebarState>(initialState);
   

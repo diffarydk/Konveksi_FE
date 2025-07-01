@@ -135,10 +135,13 @@
   <div class="header-left">
     <button
       class="toggle-sidebar"
+      class:active={$sidebar.visible}
       on:click={toggleSidebar}
       aria-label="Toggle sidebar"
     >
-      <i class="fas fa-bars"></i>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
     </button>
 
     <div class="search-container">
@@ -311,21 +314,80 @@
     gap: 1.25rem;
   }
 
+  /* Mobile Responsiveness */
+  @media (max-width: 1024px) {
+    .toggle-sidebar {
+      display: flex; /* Pastikan hamburger button tampil di mobile */
+    }
+
+    .search-container {
+      display: none; /* Sembunyikan search di mobile untuk space */
+    }
+  }
+
+  @media (max-width: 768px) {
+    .header {
+      padding: 0 1rem;
+    }
+
+    .header-left {
+      gap: 0.75rem;
+    }
+
+    .toggle-sidebar {
+      width: 44px;
+      height: 44px; /* Larger touch target for mobile */
+    }
+
+    .hamburger-line {
+      width: 22px;
+      height: 2.5px;
+    }
+  }
+
   .toggle-sidebar {
-    display: none;
     background: none;
     border: none;
-    font-size: 1.25rem;
-    color: #64748b;
     cursor: pointer;
     padding: 0.5rem;
     border-radius: var(--border-radius-md);
     transition: all 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    gap: 4px;
   }
 
   .toggle-sidebar:hover {
     background: #f1f5f9;
-    color: #2563eb;
+  }
+
+  .hamburger-line {
+    width: 20px;
+    height: 2px;
+    background: #64748b;
+    border-radius: 2px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
+  }
+
+  .toggle-sidebar:hover .hamburger-line {
+    background: #2563eb;
+  }
+
+  .toggle-sidebar.active .hamburger-line:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  .toggle-sidebar.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .toggle-sidebar.active .hamburger-line:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
   }
 
   .breadcrumb-path {
